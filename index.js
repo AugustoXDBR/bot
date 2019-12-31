@@ -37,7 +37,7 @@ bot.on('message', async message => {
 
     if (command === "fala")  {
         let mens = args[0];
-        message.channel.send(`teste ${mens}`);
+        message.channel.send(`${mens}`);
     }
     
     if(message.content.endsWith("!roleta")){
@@ -282,12 +282,32 @@ bot.on('message', async message => {
         return;
     }
 
-    if (command === "chama" && message.member.roles.has(aurole.id)) {
-        let pess = args[0];
-        message.channel.send(`@${pess}`)
-        message.channel.send(`@${pess}`)
-        message.channel.send(`@${pess}`)
-        message.channel.send(`@${pess}`)
-        message.channel.send(`@${pess}`)
+    if (command === "chama") {
+        let pessoa = message.author.id;
+            if (pessoa = ("236901700475027456")){
+                
+                let pess = args[0];
+                message.channel.send(`@${pess}`)
+                message.channel.send(`@${pess}`)
+                message.channel.send(`@${pess}`)
+                message.channel.send(`@${pess}`)
+                message.channel.send(`@${pess}`)
+        }
+        else return;
+    }
+
+    if (command === "chama2") {
+        let pessoa = message.author.id;
+            if (pessoa = ("236901700475027456")){
+                
+                let pess = args[0];
+                message.channel.send(`<@${pess}>`)
+                message.channel.send(`<@${pess}>`)
+                message.channel.send(`<@${pess}>`)
+                message.channel.send(`<@${pess}>`)
+                message.channel.send(`<@${pess}>`)
+                message.delete();
+        }
+        else return;
     }
 });
