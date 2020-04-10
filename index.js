@@ -3,13 +3,24 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 const links = require('./links.json');
 var censor
+var testefoi = 0;
+
 
 bot.login(config.token);
-
+canal = 441630318789656578;
 bot.on('ready', () => {
     bot.user.setActivity('"!comandos" para ajuda');
     console.log('logado');
-    console.log(`Bot foi iniciado, com ${bot.users.size} usuarios, em ${bot.channels.size} canais de ${bot.guilds.size} servers.`)
+    console.log(`Bot foi iniciado, com ${bot.users.size} usuarios, em ${bot.channels.size} canais de ${bot.guilds.size} servers.`);
+});
+
+
+bot.on('message', function(message) {
+    if (message.content === "$loop") { 
+      var interval = setInterval (function () {
+        message.channel.send("123")
+      }, 1 * 1000); 
+    }
 });
 
 bot.on('message', async message => {
@@ -50,11 +61,11 @@ bot.on('message', async message => {
         }
     }
 
-    if(message.content.startsWith("!botmute")){
+    if (command === "botmute") {
         censor = 1;
     }
 
-    if (message.content.startsWith("!botdesmute")){
+    if (command === "botdesmute") {
         censor = 0;
     }
 
@@ -78,6 +89,33 @@ bot.on('message', async message => {
             message.reply("Outro!");
         }
     }
+
+    if(message.content.startsWith("!roleta 2")){
+        randomNumber = Math.floor(Math.random() * (4 - 1) + 1);
+        if(randomNumber == 1){
+            message.reply("Rainbow Six!");
+        }
+        if(randomNumber == 2){
+            message.reply("Forza Horizon!");
+        }
+        if(randomNumber == 3){
+            message.reply("Sea of Thieves!");
+        }
+        if(randomNumber == 4){
+            message.reply("Magicka!");
+        }
+    }
+
+    if(message.content.startsWith("!moeda")){
+        randomNumber = Math.floor(Math.random() * (2 - 1) + 1);
+        if(randomNumber == 1){
+            message.reply("Cara!");
+        }
+        if(randomNumber == 2){
+            message.reply("Coroa!");
+        }
+    }
+
 
     if(message.content.startsWith("!roleta role")){
         randomNumber = Math.floor(Math.random() * (5 - 1) + 1);
@@ -270,7 +308,7 @@ bot.on('message', async message => {
         message.channel.send('oh, ok ;-;');
     }
     if(message.content.startsWith("!nota") && message.content.endsWith('1')){
-	    message.author.send('I will find you \n and I will kill you');
+	    message.author.send('I will find you \nand I will kill you');
         message.channel.send(';-;');
     }
 
@@ -282,7 +320,7 @@ bot.on('message', async message => {
         return;
     }
 
-    if (command === "chama") {
+    if (command === "chama2") {
         let pessoa = message.author.id;
             if (pessoa = ("236901700475027456")){
                 
@@ -296,18 +334,48 @@ bot.on('message', async message => {
         else return;
     }
 
-    if (command === "chama2") {
+    if (command === "chama") {
         let pessoa = message.author.id;
             if (pessoa = ("236901700475027456")){
                 
                 let pess = args[0];
-                message.channel.send(`<@${pess}>`)
-                message.channel.send(`<@${pess}>`)
-                message.channel.send(`<@${pess}>`)
-                message.channel.send(`<@${pess}>`)
-                message.channel.send(`<@${pess}>`)
+                message.channel.send(`${pess}`)
+                message.channel.send(`${pess}`)
+                message.channel.send(`${pess}`)
+                message.channel.send(`${pess}`)
+                message.channel.send(`${pess}`)
                 message.delete();
         }
         else return;
     }
+
+    if(message.content.startsWith("http") && message.author.id == 444542770653429770){
+        message.delete()
+        .then(msg => console.log(`Deleted message from ${msg.author.username}: \n ${msg.content}`))
+        .catch(console.error);
+    }
+/*
+    if (testefoi = 1){
+        message.channel.send("testecarai")
+    }
+    else return;
+
+
+    setInterval(function() {
+        var hora = Date.now();
+        var aula = "1586200200000";
+        console.log(hora);
+        if(hora>=aula){
+           message.canal.send('@everyone Aula daqui a 15 minutos \nhttps://www.youtube.com/watch?v=111J8hv9wU4&feature=youtu.be');
+        }}, 1000)
+    
+        setInterval(function() {
+        var teste = Date.now();
+        var teste2 = "1586198100000";
+        console.log(teste);
+        if(teste>=teste2){
+            var testefoi = 1;
+        }}, 1000)
+    
+*/
 });
