@@ -14,7 +14,7 @@ bot.on('ready', () => {
     console.log(`Bot foi iniciado, com ${bot.users.size} usuarios, em ${bot.channels.size} canais de ${bot.guilds.size} servers.`);
 });
 
-
+/*
 bot.on('message', function(message) {
     if (message.content === "$loop") { 
       var interval = setInterval (function () {
@@ -22,7 +22,8 @@ bot.on('message', function(message) {
       }, 1 * 1000); 
     }
 });
-
+*/
+// Isso aqui é a maioria das funções, bot respondendo mensagens
 bot.on('message', async message => {
     
     if(message.author.bot) return;
@@ -46,7 +47,7 @@ bot.on('message', async message => {
         message.channel.send(`${pepemonkas}`);
     }
 
-    if (command === "fala")  {
+    if (command === "fala" && (message.author = "236901700475027456"))  {
         let mens = args[0];
         message.channel.send(`${mens}`);
     }
@@ -73,7 +74,7 @@ bot.on('message', async message => {
         message.channel.send(censor);
     }
 
-    
+// Código reutilizado muitas vezes (até demais)
     if(message.content.startsWith("!roleta game")){
         randomNumber = Math.floor(Math.random() * (4 - 1) + 1);
         if(randomNumber == 1){
@@ -234,6 +235,9 @@ bot.on('message', async message => {
 
     }
 
+// censura de links, imagens, etc; com certeza há uma maneira bem melhor de fazer isso
+// tanto que isso não detecta imagens baixadas (eu acho)
+
     if(message.content.startsWith("http") && (message.channel.id != '441630318789656578') && (message.channel.id != '510166342025084977')){
         message.channel.send('.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.');
     }
@@ -246,9 +250,11 @@ bot.on('message', async message => {
     if(message.content.endsWith(".gif")){
         message.channel.send('.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.');
     }
+
     if(message.content.includes(";-;")){
         message.channel.send(';-;');
     }
+
     if(message.content.includes("porra") && censor==0){
         message.channel.send('não fale palavras chulas');
     }
@@ -262,10 +268,7 @@ bot.on('message', async message => {
     if(message.content.includes("coe bot")){
         message.channel.send('coe mano');
     }
-    if(message.content.includes("coe bot")){
-        message.channel.send('vai toma no teu cu');
-    }
-    
+  
     if(message.content.endsWith("!nota")){
         message.channel.send('use: !nota [1/2/3/4/5]');
     }
@@ -320,6 +323,8 @@ bot.on('message', async message => {
         return;
     }
 
+// redundância de funções, que no começo eram completamente diferentes
+
     if (command === "chama2") {
         let pessoa = message.author.id;
             if (pessoa = ("236901700475027456")){
@@ -354,6 +359,9 @@ bot.on('message', async message => {
         .then(msg => console.log(`Deleted message from ${msg.author.username}: \n ${msg.content}`))
         .catch(console.error);
     }
+
+// tentativa de aviso de aulas, mas ler a documentação é muito difícil
+
 /*
     if (testefoi = 1){
         message.channel.send("testecarai")
