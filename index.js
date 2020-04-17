@@ -360,6 +360,15 @@ bot.on('message', async message => {
         .catch(console.error);
     }
 
+    if (command === "falateste") {
+        bot.channels.get("441630318789656578").send("aaaaaaaaaaaaaa")
+    }
+
+    if (command === "hurr" && (message.author.id == 236901700475027456)){
+        const hurr = bot.emojis.find(emoji => emoji.name === "hurr");
+        bot.channels.get("441630318789656578").send(`${hurr}`);
+    }
+
 // tentativa de aviso de aulas, mas ler a documentação é muito difícil
 
 /*
