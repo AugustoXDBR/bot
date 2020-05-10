@@ -324,20 +324,7 @@ bot.on('message', async message => {
     }
 
 // redundância de funções, que no começo eram completamente diferentes
-
-    if (command === "chama2") {
-        let pessoa = message.author.id;
-            if (pessoa = ("236901700475027456")){
-                
-                let pess = args[0];
-                message.channel.send(`@${pess}`)
-                message.channel.send(`@${pess}`)
-                message.channel.send(`@${pess}`)
-                message.channel.send(`@${pess}`)
-                message.channel.send(`@${pess}`)
-        }
-        else return;
-    }
+// finalmente tirei a outra função, bem inútil
 
     if (command === "chama") {
         let pessoa = message.author.id;
@@ -354,15 +341,21 @@ bot.on('message', async message => {
         else return;
     }
 
+// censura pra spam de link
+
     if(message.content.startsWith("http") && message.author.id == 444542770653429770){
         message.delete()
         .then(msg => console.log(`Deleted message from ${msg.author.username}: \n ${msg.content}`))
         .catch(console.error);
     }
 
+// debug pra mensagem do bot
+
     if (command === "falateste") {
         bot.channels.get("441630318789656578").send("aaaaaaaaaaaaaa")
     }
+
+// hehe
 
     if (command === "hurr" && (message.author.id == 236901700475027456)){
         const hurr = bot.emojis.find(emoji => emoji.name === "hurr");
