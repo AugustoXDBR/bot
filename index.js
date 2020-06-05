@@ -345,9 +345,18 @@ bot.on('message', async message => {
 
     if(message.content.startsWith("http") && message.author.id == 444542770653429770){
         message.delete()
-        .then(msg => console.log(`Deleted message from ${msg.author.username}: \n ${msg.content}`))
-        .catch(console.error);
+        console.log(`Mensagem deletada de ${message.author.username} às ${message.createdAt} : \n ${message.content}`);
+        bot.channels.get("718459588881547296").send(`Mensagem deletada de **${message.author.username}** às ${message.createdAt}: \n ${message.content}`);
     }
+
+/* Debuging daora
+    if(message.content.startsWith("teste") && message.author.id == 236901700475027456){
+        message.delete()
+        console.log(`Mensagem deletada de ${message.author.username} às ${message.createdAt} : \n ${message.content}`);
+        bot.channels.get("317781692226076672").send(`Mensagem deletada de **${message.author.username}** às ${message.createdAt}: \n ${message.content}`);
+        console.save;
+    }
+*/
 
 // debug pra mensagem do bot
 
