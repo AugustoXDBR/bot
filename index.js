@@ -11,7 +11,7 @@ canal = 441630318789656578;
 bot.on('ready', () => {
     bot.user.setActivity('"!comandos" para ajuda');
     console.log('logado');
-    console.log(`Bot foi iniciado, com ${bot.users.size} usuarios, em ${bot.channels.size} canais de ${bot.guilds.size} servers.`);
+    console.log(`Bot foi iniciado, com ${bot.users.size} usuários, em ${bot.channels.size} canais de ${bot.guilds.size} servers.`);
 });
 
 /*
@@ -40,11 +40,15 @@ bot.on('message', async message => {
 
     if(command === "ping") {
         const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latencia de ${m.createdTimestamp - message.createdTimestamp}ms. Latencia de API ${Math.round(bot.ping)}ms`);
+        m.edit(`Pong! Latência de ${m.createdTimestamp - message.createdTimestamp}ms. Latência de API ${Math.round(bot.ping)}ms`);
     }
     if(message.content.startsWith(`<:pepemonkas:`)){
         const pepemonkas = bot.emojis.find(emoji => emoji.name === "pepemonkas");
         message.channel.send(`${pepemonkas}`);
+    }
+    if(message.content.startsWith(`<:pepehands:`)){
+        const pepehands = bot.emojis.find(emoji => emoji.name === "pepehands");
+        message.channel.send(`${pepehands}`);
     }
 
     if (command === "fala" && (message.author = "236901700475027456"))  {
@@ -78,7 +82,7 @@ bot.on('message', async message => {
     if(message.content.startsWith("!roleta game")){
         randomNumber = Math.floor(Math.random() * (4 - 1) + 1);
         if(randomNumber == 1){
-            message.reply("Banco Imobiliario!");
+            message.reply("Banco Imobiliário!");
         }
         if(randomNumber == 2){
             message.reply("Stardew Valley!");
@@ -139,97 +143,98 @@ bot.on('message', async message => {
 
     if(message.content.startsWith("!roleta h") && (message.channel.id == '442099014167429130')){
         randomNumber = Math.floor(Math.random() * (31 - 1) + 1);
-        if((randomNumber == 1) && (message.channel.id == '442099014167429130')){
+
+        if(randomNumber == 1){
             message.reply("GR!");
         }
-        if((randomNumber == 2) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 2){
             message.reply("MO!");
         }
-        if((randomNumber == 3) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 3){
             message.reply("GP!");
         }
-        if((randomNumber == 4) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 4){
             message.reply("RP!");
         }
-        if((randomNumber == 5) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 5){
             message.reply("AG!");
         }
-        if((randomNumber == 6) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 6){
             message.reply("AN!");
         }
-        if((randomNumber == 7) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 7){
             message.reply("FJ!");
         }
-        if((randomNumber == 8) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 8){
             message.reply("BQ!");
         }
-        if((randomNumber == 9) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 9){
             message.reply("BK!");
         }
-        if((randomNumber == 10) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 10){ 
             message.reply("CK!");
         }
-        if((randomNumber == 11) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 11){ 
             message.reply("DP!");
         }
-        if((randomNumber == 12) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 12){ 
             message.reply("FN!");
         }
-        if((randomNumber == 13) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 13){ 
             message.reply("FD!");
         }
-        if((randomNumber == 14) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 14){
             message.reply("GK!");
         }
-        if((randomNumber == 15) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 15){
             message.reply("GS!");
         }
-        if((randomNumber == 16) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 16){
             message.reply("IS!");
         }
-        if((randomNumber == 17) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 17){
             message.reply("FR!");
         }
-        if((randomNumber == 18) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 18){
             message.reply("KM!");
         }
-        if((randomNumber == 19) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 19){
             message.reply("LC!");
         }
-        if((randomNumber == 20) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 20){
             message.reply("MT!");
         }
-        if((randomNumber == 21) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 21){
             message.reply("MB!");
         }
-        if((randomNumber == 22) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 22){
             message.reply("NK!");
         }
-        if((randomNumber == 23) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 23){
             message.reply("NR!");
         }
-        if((randomNumber == 24) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 24){
             message.reply("OP!");
         }
-        if((randomNumber == 25) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 25){
             message.reply("PZ!");
         }
-        if((randomNumber == 26) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 26){
             message.reply("PK!");
         }
-        if((randomNumber == 27) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 27){
             message.reply("SC!");
         }
-        if((randomNumber == 28) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 28){
             message.reply("TC!");
         }
-        if((randomNumber == 29) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 29){
             message.reply("VL!");
         }
-        if((randomNumber == 30) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 30){
             message.reply("YO!");
         }
-        if((randomNumber == 31) && (message.channel.id == '442099014167429130')){
+        if(randomNumber == 31){
             message.reply("YU!");
         }
 
@@ -266,7 +271,7 @@ bot.on('message', async message => {
         message.channel.send(';-;');
     }
     if(message.content.includes("coe bot")){
-        message.channel.send('coe mano');
+        message.channel.send('coé mano');
     }
   
     if(message.content.endsWith("!nota")){
