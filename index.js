@@ -10,6 +10,8 @@ bot.login(config.token);
 canal = 441630318789656578;
 bot.on('ready', () => {
     bot.user.setActivity('"!comandos" para ajuda');
+    //cringe necessário
+    //bot.user.setActivity("Don't be sad it's over, be happy it happened");
     console.log('logado');
     console.log(`Bot foi iniciado, com ${bot.users.size} usuários, em ${bot.channels.size} canais de ${bot.guilds.size} servers.`);
 });
@@ -347,13 +349,14 @@ bot.on('message', async message => {
     }
 
 // censura pra spam de link
-
+/* acho que o inacio cresceu. so long censura ;-;
     if(message.content.startsWith("http") && message.author.id == 444542770653429770){
         message.delete()
         console.log(`Mensagem deletada de ${message.author.username} às ${message.createdAt} : \n ${message.content}`);
         bot.channels.get("718459588881547296").send(`Mensagem deletada de **${message.author.username}** às ${message.createdAt}: \n ${message.content}`);
     }
 
+*/
 /* Debuging daora
     if(message.content.startsWith("teste") && message.author.id == 236901700475027456){
         message.delete()
